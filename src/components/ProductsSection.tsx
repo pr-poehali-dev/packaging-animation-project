@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 
@@ -33,66 +32,34 @@ const ProductsSection = () => {
       description: "Премиальная упаковка для подарков, сувениров и корпоративных наборов"
     }
   ];
-  
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  };
-  
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-purple-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-display font-bold mb-4"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <h2 
+            className="text-3xl md:text-4xl font-display font-bold mb-4 animate-fade-in"
           >
             Наша продукция
-          </motion.h2>
-          <motion.p 
-            className="text-gray-600 max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          </h2>
+          <p 
+            className="text-gray-600 max-w-2xl mx-auto animate-fade-in"
+            style={{ animationDelay: "200ms" }}
           >
             Производим упаковку любой сложности с индивидуальным дизайном 
             и брендированием для компаний всех отраслей
-          </motion.p>
+          </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {categories.map((category) => (
-            <motion.div 
+          {categories.map((category, index) => (
+            <div 
               key={category.id}
-              className={`relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover-lift ${
+              className={`relative overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:scale-[1.02] opacity-0 animate-fade-in ${
                 activeCategory === category.id ? "ring-2 ring-packaging-primary" : ""
               }`}
               onClick={() => setActiveCategory(category.id)}
-              whileHover={{ scale: 1.02 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="relative h-64">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
@@ -106,22 +73,16 @@ const ProductsSection = () => {
                 <h3 className="text-xl font-bold mb-2">{category.name}</h3>
                 <p className="text-sm text-white/80">{category.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
         
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Array.from({ length: 6 }).map((_, index) => (
-            <motion.div 
+            <div 
               key={index} 
-              className="bg-white rounded-lg shadow-md overflow-hidden hover-lift"
-              variants={fadeInUp}
+              className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:scale-[1.02] opacity-0 animate-fade-in"
+              style={{ animationDelay: `${300 + index * 100}ms` }}
             >
               <div className="h-48 overflow-hidden">
                 <img 
@@ -139,12 +100,12 @@ const ProductsSection = () => {
                   </Button>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
         
         <div className="mt-12 text-center">
-          <Button className="bg-gradient-to-r from-packaging-primary to-packaging-secondary hover:opacity-90 transition-opacity shadow-lg shadow-purple-200">
+          <Button className="bg-gradient-to-r from-packaging-primary to-packaging-secondary hover:opacity-90 transition-opacity shadow-lg shadow-purple-200 animate-fade-in" style={{ animationDelay: "900ms" }}>
             Смотреть весь каталог
           </Button>
         </div>
