@@ -1,143 +1,130 @@
 import { Link } from "react-router-dom";
-import { ShoppingBag, Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { ShoppingBag, Phone, Mail, MapPin, Clock, Instagram, Facebook, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <footer className="bg-gray-900 text-white">
+      <div className="container mx-auto px-4 pt-16 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div>
-            <div className="flex items-center space-x-2 mb-6">
+            <Link to="/" className="flex items-center space-x-2 mb-6">
               <ShoppingBag className="h-8 w-8 text-packaging-primary" />
               <span className="font-display text-xl font-bold tracking-tight">ПакетПлюс</span>
-            </div>
+            </Link>
             <p className="text-gray-400 mb-6">
-              Собственное производство упаковки с вашим логотипом. 
-              Качественная продукция, сжатые сроки, доставка по всей России.
+              Производство качественной упаковки с индивидуальным дизайном для вашего бизнеса. 
+              Работаем с 2011 года.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                <Instagram className="h-5 w-5" />
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-packaging-primary transition-colors">
+                <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                <Facebook className="h-5 w-5" />
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-packaging-primary transition-colors">
+                <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-packaging-primary transition-colors">
+                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">Навигация</h3>
+            <h3 className="text-lg font-bold mb-6">Продукция</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                  Главная
-                </Link>
+                <Link to="/products/paper-bags" className="text-gray-400 hover:text-white transition-colors">Бумажные пакеты</Link>
               </li>
               <li>
-                <Link to="/products" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                  Продукция
-                </Link>
+                <Link to="/products/plastic-bags" className="text-gray-400 hover:text-white transition-colors">Полиэтиленовые пакеты</Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                  Услуги
-                </Link>
+                <Link to="/products/boxes" className="text-gray-400 hover:text-white transition-colors">Коробки и упаковка</Link>
               </li>
               <li>
-                <Link to="/portfolio" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                  Портфолио
-                </Link>
+                <Link to="/products/gift-packaging" className="text-gray-400 hover:text-white transition-colors">Подарочная упаковка</Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                  О нас
-                </Link>
+                <Link to="/products/food-packaging" className="text-gray-400 hover:text-white transition-colors">Упаковка для еды</Link>
               </li>
               <li>
-                <Link to="/contacts" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                  Контакты
-                </Link>
+                <Link to="/products/stickers" className="text-gray-400 hover:text-white transition-colors">Стикеры и наклейки</Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">Продукция</h3>
+            <h3 className="text-lg font-bold mb-6">Компания</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/products/bags" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                  Пакеты бумажные
-                </Link>
+                <Link to="/about" className="text-gray-400 hover:text-white transition-colors">О нас</Link>
               </li>
               <li>
-                <Link to="/products/poly-bags" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                  Пакеты полиэтиленовые
-                </Link>
+                <Link to="/portfolio" className="text-gray-400 hover:text-white transition-colors">Портфолио</Link>
               </li>
               <li>
-                <Link to="/products/boxes" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                  Коробки картонные
-                </Link>
+                <Link to="/services" className="text-gray-400 hover:text-white transition-colors">Услуги</Link>
               </li>
               <li>
-                <Link to="/products/gift" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                  Подарочная упаковка
-                </Link>
+                <Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Блог</Link>
               </li>
               <li>
-                <Link to="/products/eco" className="text-gray-400 hover:text-packaging-primary transition-colors">
-                  Эко-упаковка
-                </Link>
+                <Link to="/contacts" className="text-gray-400 hover:text-white transition-colors">Контакты</Link>
+              </li>
+              <li>
+                <Link to="/shipping" className="text-gray-400 hover:text-white transition-colors">Доставка</Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">Контакты</h3>
+            <h3 className="text-lg font-bold mb-6">Контакты</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <Phone className="h-5 w-5 text-packaging-primary mr-3 mt-0.5" />
+                <Phone className="w-5 h-5 text-packaging-primary mr-3 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-white">8 (800) 555-35-35</p>
-                  <p className="text-gray-400 text-sm">Пн-Пт: 9:00 - 18:00</p>
+                  <p className="font-medium">8 (800) 555-35-35</p>
+                  <p className="text-sm text-gray-400">Пн-Пт с 9:00 до 18:00</p>
                 </div>
               </li>
               <li className="flex items-start">
-                <Mail className="h-5 w-5 text-packaging-primary mr-3 mt-0.5" />
+                <Mail className="w-5 h-5 text-packaging-primary mr-3 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-white">info@paketplus.ru</p>
-                  <p className="text-gray-400 text-sm">Отдел продаж</p>
+                  <p className="font-medium">info@paketplus.ru</p>
+                  <p className="text-sm text-gray-400">Для запросов и предложений</p>
                 </div>
               </li>
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-packaging-primary mr-3 mt-0.5" />
+                <MapPin className="w-5 h-5 text-packaging-primary mr-3 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-white">г. Москва, ул. Промышленная, д. 15</p>
-                  <p className="text-gray-400 text-sm">Производство и офис</p>
+                  <p className="font-medium">г. Москва</p>
+                  <p className="text-sm text-gray-400">ул. Примерная, д. 123</p>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <Clock className="w-5 h-5 text-packaging-primary mr-3 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-medium">Режим работы</p>
+                  <p className="text-sm text-gray-400">Пн-Пт: 9:00–18:00</p>
                 </div>
               </li>
             </ul>
-            <div className="mt-5">
-              <Button className="bg-gradient-to-r from-packaging-primary to-packaging-secondary hover:opacity-90 transition-opacity w-full">
-                Заказать звонок
-              </Button>
-            </div>
           </div>
         </div>
         
-        <div className="pt-8 mt-8 border-t border-gray-800 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center">
-          <p>© {new Date().getFullYear()} ПакетПлюс. Все права защищены.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="hover:text-packaging-primary transition-colors">
-              Политика конфиденциальности
-            </Link>
-            <Link to="/terms" className="hover:text-packaging-primary transition-colors">
-              Условия использования
-            </Link>
+        <div className="pt-8 border-t border-gray-800 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <p className="text-gray-500 text-sm order-2 md:order-1 text-center md:text-left">
+              © {new Date().getFullYear()} ПакетПлюс. Все права защищены.
+            </p>
+            <div className="flex justify-center md:justify-end space-x-6 order-1 md:order-2">
+              <Button variant="link" className="text-gray-500 hover:text-white px-0">
+                Политика конфиденциальности
+              </Button>
+              <Button variant="link" className="text-gray-500 hover:text-white px-0">
+                Пользовательское соглашение
+              </Button>
+            </div>
           </div>
         </div>
       </div>
