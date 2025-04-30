@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import ProductsSection from "@/components/ProductsSection";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   useEffect(() => {
